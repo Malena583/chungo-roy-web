@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Chungo Roy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+
+<body class="pagina-interna">
+
+    <header id="site-header"></header>
+
+    <main>
+        <section class="contacto-premium">
+            <div class="contacto-container">
+
+                <div class="contacto-header reveal">
+                    <span class="header-tag">Contrataciones & Proyectos</span>
+                    <h2 class="title-display">Conectemos a través de la <span>Música</span></h2>
+                    <div class="dash-red"></div>
+                    <p>Para conciertos, sesiones de estudio, arreglos musicales o consultas pedagógicas.</p>
+                </div>
+
+                <div class="contacto-central">
+                    <div class="contacto-card reveal">
+                        <div class="card-icon">
+                            <img src="img/logos/gmail.png" alt="Email">
+                        </div>
+                        <h3>Contacto Directo</h3>
+                        <p>Envíe su propuesta detallada a:</p>
+                        <a href="mailto:chungoroy2@gmail.com" class="link-contacto">chungoroy2@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="disponibilidad-block reveal">
+                    <div class="header-divider"></div>
+                    <div class="disponibilidad-content">
+                        <div class="disp-item">
+                            <h4>Ubicación</h4>
+                            <p>Posadas, Misiones</p>
+                        </div>
+                        <div class="disp-item">
+                            <h4>Movilidad</h4>
+                            <p>Disponibilidad para giras y proyectos internacionales.</p>
+                        </div>
+                        <div class="disp-item">
+                            <h4>Modalidad</h4>
+                            <p>Presencial y Producción Remota</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
+
+</body>
+</html>

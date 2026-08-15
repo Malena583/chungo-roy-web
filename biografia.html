@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biografía - Chungo Roy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/biografia.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="pagina-interna">
+
+    <header id="site-header"></header>
+
+    <main>
+        <section class="hero-bio">
+            <div class="overlay-bio">
+                <h1>Biografía</h1>
+            </div>
+        </section>
+
+        <section class="contenido-bio">
+
+            <div class="bio-manifiesto">
+                <div class="frase-wrapper">
+                    <p>
+                        "Explorar todo lo posible, desarrollar el fraseo,
+                        la armonía y la melodía sin perder la esencia."
+                    </p>
+                </div>
+            </div>
+
+            <div class="bio-perfil">
+                <div class="perfil-card">
+                    <span class="perfil-decor"></span>
+                    <h2>Perfil Profesional</h2>
+                    <p>
+                        Pianista, arreglador y compositor argentino con trayectoria nacional e internacional, formación académica sólida y experiencia en festivales, giras y producciones discográficas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bio-formacion">
+                <h2 class="titulo-seccion">Formación</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <h3>Diplomatura en Música Argentina</h3>
+                            <p>Universidad Nacional de San Martín (UNSAM)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <h3>Berklee College of Music</h3>
+                            <p>Boston, Estados Unidos</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <h3>Conservatorio Fracassi</h3>
+                            <p>Formación académica inicial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="bio-trayectoria">
+                <div class="trayectoria-header">
+                    <h2>Hitos & Escenarios</h2>
+                </div>
+
+                <div class="trayectoria-container">
+                    <div class="trayectoria-item">
+                        <div class="tray-img">
+                            <img src="img/fotos/internacional.jpeg" alt="Chungo Roy Internacional">
+                        </div>
+                        <div class="tray-info">
+                            <span>2017 - 2025</span>
+                            <h3>Escenarios del Mundo</h3>
+                            <p>Pianista titular para cadenas internacionales como Princess y Royal Caribbean. En 2024 recorrió Japón y se prepara para el World Cruise 2025.</p>
+                        </div>
+                    </div>
+
+                    <div class="trayectoria-item alt">
+                        <div class="tray-info">
+                            <span>Grandes Estadios</span>
+                            <h3>Templos de la Música</h3>
+                            <p>Desde el Luna Park hasta el Estadio Monumental, ha formado parte de las producciones más masivas de Argentina.</p>
+                        </div>
+                        <div class="tray-img">
+                            <img src="img/fotos/esenario.jpeg" alt="Concierto Estadio">
+                        </div>
+                    </div>
+
+                    <div class="trayectoria-item">
+                        <div class="tray-img">
+                            <img src="img/fotos/TocandoPiano5.jpeg" alt="Chungo Roy Director">
+                        </div>
+                        <div class="tray-info">
+                            <span>Dirección y Arreglos</span>
+                            <h3>Liderazgo Musical</h3>
+                            <p>Director Musical de los homenajes a Malvinas en Tecnópolis y a Violeta Parra en el CCK.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bio-colaboraciones">
+                <div class="colab-header">
+                    <h2>Colaboraciones Destacadas</h2>
+                </div>
+                <div class="colaboraciones-grid">
+                    <div class="colab-tag">Rubén Rada</div>
+                    <div class="colab-tag">Daniel Maza</div>
+                    <div class="colab-tag">Julia Zenko</div>
+                    <div class="colab-tag">Pipi Piazzolla</div>
+                    <div class="colab-tag">Los Totora</div>
+                    <div class="colab-tag">Vox Dei</div>
+                    <div class="colab-tag">Raúl Barboza</div>
+                    <div class="colab-tag">Marcelo Torres</div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const timeline = document.querySelector('.timeline');
+            if(timeline) {
+                const timelineObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animar-linea');
+                            const items = entry.target.querySelectorAll('.timeline-item');
+                            items.forEach(item => item.classList.add('entrada'));
+                        }
+                    });
+                }, { threshold: 0.1 });
+                timelineObserver.observe(timeline);
+            }
+
+            const manifiesto = document.querySelector('.bio-manifiesto');
+            if(manifiesto) {
+                const manifiestoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revelar');
+                        }
+                    });
+                }, { threshold: 0.5 });
+                manifiestoObserver.observe(manifiesto);
+            }
+
+            const trayectories = document.querySelectorAll('.trayectoria-item');
+            const trayObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+            trayectories.forEach(item => trayObserver.observe(item));
+
+            const grid = document.querySelector('.colaboraciones-grid');
+            const tags = document.querySelectorAll('.colab-tag');
+            if(grid) {
+                tags.forEach((tag, index) => {
+                    tag.style.transitionDelay = `${index * 0.1}s`;
+                });
+                const observerColab = new IntersectionObserver((entries) => {
+                    if(entries[0].isIntersecting) {
+                        grid.classList.add('revelado');
+                    }
+                }, { threshold: 0.5 });
+                observerColab.observe(grid);
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+

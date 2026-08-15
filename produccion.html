@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Producción & Clases - Chungo Roy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/produccion.css">
+</head>
+
+<body class="pagina-interna">
+
+    <header id="site-header"></header>
+
+    <main>
+        <section class="seccion-produccion reveal">
+            <div class="proyectos-header-premium">
+                <div class="header-reveal">
+                    <span class="header-tag">Estudio Propio & Arreglos</span>
+                    <h2 class="header-title">Producción <span>Musical</span></h2>
+                    <div class="header-divider"></div>
+                    <p class="header-subtitle">
+                        Servicios profesionales de arreglos y grabaciones para artistas nacionales e internacionales, con enfoque en la excelencia sonora.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-servicios">
+                <div class="servicio-card reveal">
+                    <h3>Dirección Musical</h3>
+                    <p>Coordinación integral de proyectos, desde la concepción de la idea hasta el resultado final en el estudio.</p>
+                </div>
+                <div class="servicio-card reveal">
+                    <h3>Arreglos Orquestales</h3>
+                    <p>Composición y escritura para diversos formatos: desde piano solo hasta ensambles de cámara y populares.</p>
+                </div>
+                <div class="servicio-card highlight reveal">
+                    <h3>Piano & Teclados</h3>
+                    <p>Grabaciones de piano acústico y eléctrico con equipamiento profesional de alta gama.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-clases reveal">
+            <div class="clases-wrapper">
+                <div class="clases-texto">
+                    <span class="header-tag" style="color: #c1121f;">Formación Académica</span>
+                    <h2 class="title-display">Docencia <span>Particular</span></h2>
+                    <p>Clases personalizadas en Posadas (Misiones) y modalidad virtual para todo el mundo. Un espacio dedicado al crecimiento técnico e interpretativo.</p>
+
+                    <ul class="skills-list">
+                        <li><strong>Materias:</strong> Piano, Lectura, Armonía y Audioperceptiva.</li>
+                        <li><strong>Especialidad:</strong> Improvisación, Arreglos, Composición y Orquestación.</li>
+                        <li><strong>Modalidad:</strong> Clases individuales y Talleres grupales de ensamble.</li>
+                        <li><strong>Edad:</strong> Programas para niños (desde los 8 años) y adultos.</li>
+                    </ul>
+                </div>
+
+                <div class="clases-imagen-wrapper reveal">
+                    <div class="info-badge">Presencial & Virtual</div>
+                    <img src="img/fotos/clasesPiano.jfif" alt="Clase presencial y virtual" class="clases-imagen-foto">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal, .servicio-card, .clases-wrapper");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
+
+</body>
+</html>

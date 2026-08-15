@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Shows - Chungo Roy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shows.css">
+</head>
+
+<body class="pagina-interna">
+
+    <header id="site-header"></header>
+
+    <main>
+        <section class="seccion-shows reveal">
+            <div class="proyectos-header-premium">
+                <div class="header-reveal">
+                    <span class="header-tag">Agenda & Conciertos</span>
+                    <h2 class="header-title">Próximos <span>Shows</span></h2>
+                    <div class="header-divider"></div>
+                    <p class="header-subtitle">
+                        Acompañanos en un recorrido sonoro por los escenarios más emblemáticos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="agenda-container">
+                <div class="show-item reveal">
+                    <div class="show-fecha">
+                        <span class="dia">15</span>
+                        <span class="mes">MAR</span>
+                    </div>
+                    <div class="show-info">
+                        <h3>Recital de Piano Solo</h3>
+                        <p>Teatro Lírico, Posadas, Misiones.</p>
+                    </div>
+                    <div class="show-link">
+                        <a href="contacto.html" class="btn-ticket">Reservar</a>
+                    </div>
+                </div>
+
+                <div class="show-item reveal">
+                    <div class="show-fecha">
+                        <span class="dia">22</span>
+                        <span class="mes">ABR</span>
+                    </div>
+                    <div class="show-info">
+                        <h3>Paraguay Purahei - Ensamble</h3>
+                        <p>Centro Cultural, Asunción, Paraguay.</p>
+                    </div>
+                    <div class="show-link">
+                        <span class="sold-out">Próximamente</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="giras-destacadas reveal">
+                <span class="header-tag">Giras Internacionales</span>
+                <div class="giras-grid">
+                    <div class="gira-card">
+                        <h4>Brasil & Suiza</h4>
+                        <p>Pianista y arreglador oficial de <strong>Paraguay Purahei</strong>, llevando nuestra música a los escenarios europeos.</p>
+                    </div>
+                    <div class="gira-card">
+                        <h4>Escenarios Nacionales</h4>
+                        <p>Participación en festivales y salas de concierto en toda la Argentina.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cita-final reveal">
+            <div class="cita-container">
+                <span class="comilla-serif">"</span>
+                <p class="texto-cita">
+                    La música solo sucede cuando se comparte en el silencio de una sala.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal, .show-item, .gira-card");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
+
+</body>
+</html>

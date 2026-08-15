@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Medios - Chungo Roy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/medios.css">
+</head>
+
+<body class="pagina-interna">
+
+    <header id="site-header"></header>
+
+    <main>
+        <section class="seccion-medios reveal">
+            <div class="proyectos-header-premium">
+                <div class="header-reveal">
+                    <span class="header-tag">Archivo de Prensa</span>
+                    <h2 class="header-title">Chungo <span>en los</span> Medios</h2>
+                    <div class="header-divider"></div>
+                    <p class="header-subtitle">
+                        Recopilación de notas, entrevistas y reseñas en diarios nacionales e internacionales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="prensa-grid">
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/JazzChungoD1.jpeg" alt="Nota de prensa">
+                    <div class="prensa-overlay">
+                        <span>Chungo y el Jazz</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/PasionD2.jpeg" alt="Entrevista radio">
+                    <div class="prensa-overlay">
+                        <span>Fusion Musical</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/TrangesoresD3.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Primero Lo Nuestro</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/GiganteD4.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Pequeño Gran Gigante</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/BethovenD5.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Inspiración juvenil</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/FindeD6.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Fin de semana jazzero</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/VoxDeiD7.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Tributo rockero</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/teclasD8.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Pasion Musical</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/RioD9.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Candombe auténtico</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/ftgrupalD10.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Elegancia festiva</span>
+                    </div>
+                </div>
+
+                <div class="prensa-item reveal">
+                    <img src="img/fotos/sieteD11.jpeg" alt="Reseña concierto">
+                    <div class="prensa-overlay">
+                        <span>Jazz vibrante</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cita-separador reveal">
+            <div class="cita-content">
+                <span class="comillas-giant">"</span>
+                <p>Chungo Roy es capaz de transformar el paisaje misionero en una pieza de cámara universal.</p>
+                — Diario El Territorio
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
+
+</body>
+</html>

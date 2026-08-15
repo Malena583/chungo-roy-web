@@ -1,0 +1,516 @@
+/* ===================================================
+   BIOGRAFIA.CSS — Estilos exclusivos de biografia.html
+=================================================== */
+
+/* ===== HERO BIOGRAFÍA ===== */
+
+.hero-bio {
+    position: relative;
+    height: 85vh;
+    background: url("../img/fotos/biopianochungo.jpeg") center 0% / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    animation: subirSuave 14s ease-in-out infinite alternate;
+}
+
+@keyframes subirSuave {
+    0% {
+        background-position: center 0%;
+    }
+    100% {
+        background-position: center 20%;
+    }
+}
+
+.hero-bio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.7)
+    );
+}
+
+.overlay-bio {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.overlay-bio h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 70px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+/* ===== CONTENIDO BIO ===== */
+
+.contenido-bio {
+    padding: 100px 12% 120px;
+    background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 45vh;
+    margin-top: -120px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== MANIFIESTO ===== */
+
+.bio-manifiesto {
+    max-width: 800px;
+    margin: 0 auto 100px;
+    position: relative;
+    padding-left: 30px;
+    overflow: hidden;
+}
+
+.bio-manifiesto::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: #214385;
+    transition: height 0.8s ease-out;
+}
+
+.bio-manifiesto p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    border-left: none;
+
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: transform 1s ease-out, opacity 1s ease;
+    transition-delay: 0.6s;
+}
+
+.bio-manifiesto.revelar::before {
+    height: 100%;
+}
+
+.bio-manifiesto.revelar p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== PERFIL PROFESIONAL ===== */
+
+.bio-perfil {
+    padding: 60px 0;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-card {
+    background: #ffffff;
+    padding: 60px 50px;
+    max-width: 850px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    position: relative;
+    text-align: center;
+    border-top: 4px solid #214385;
+}
+
+.perfil-decor::before {
+    content: "◈";
+    color: #214385;
+    font-size: 24px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 15px;
+}
+
+.perfil-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #111;
+}
+
+.perfil-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #444;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* ===== TIMELINE FORMACIÓN ===== */
+
+.bio-formacion {
+    margin: 180px 0;
+    position: relative;
+}
+
+.titulo-seccion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: #214385;
+    transform: translateX(-50%);
+    transition: height 1.5s ease-in-out;
+}
+
+.timeline.animar-linea::before {
+    height: 100%;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 0.8s ease-out;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 45px;
+    transform: translateX(-50px);
+}
+
+.timeline-item.entrada {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+.timeline-item:nth-child(1).entrada {
+    transition-delay: 0.4s;
+}
+.timeline-item:nth-child(1).entrada .timeline-dot {
+    transition-delay: 0.3s;
+}
+
+.timeline-item:nth-child(2).entrada {
+    transition-delay: 0.9s;
+}
+.timeline-item:nth-child(2).entrada .timeline-dot {
+    transition-delay: 0.8s;
+}
+
+.timeline-item:nth-child(3).entrada {
+    transition-delay: 1.4s;
+}
+.timeline-item:nth-child(3).entrada .timeline-dot {
+    transition-delay: 1.3s;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 45px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #214385;
+    border-radius: 50%;
+    top: 10px;
+    z-index: 10;
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item.entrada .timeline-dot {
+    transform: scale(1);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -9px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -9px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* ===== HITOS & ESCENARIOS ===== */
+
+.bio-trayectoria {
+    margin-top: 150px;
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.trayectoria-header h2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    margin-bottom: 80px;
+    letter-spacing: 2px;
+}
+
+.trayectoria-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.trayectoria-item {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 120px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.trayectoria-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tray-img {
+    flex: 1.2;
+    overflow: hidden;
+    box-shadow: 20px 20px 0px -5px #f0f0f0;
+}
+
+.tray-img img {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%);
+    transition: 0.6s ease;
+}
+
+.trayectoria-item:hover .tray-img img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.tray-info {
+    flex: 1;
+    background: white;
+    padding: 50px;
+    z-index: 2;
+    margin-left: -80px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-bottom: 0px solid #214385;
+    transition: border-width 0.5s ease-in-out;
+    transition-delay: 0.8s;
+}
+
+.trayectoria-item.visible .tray-info {
+    border-bottom: 4px solid #214385;
+}
+
+.trayectoria-item.alt .tray-info {
+    margin-left: 0;
+    margin-right: -80px;
+    text-align: right;
+}
+
+.tray-info span {
+    font-family: 'Montserrat', sans-serif;
+    color: #214385;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tray-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+/* ===== COLABORACIONES ===== */
+
+.bio-colaboraciones {
+    padding: 100px 20px;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.colab-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.colaboraciones-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.colab-tag {
+    padding: 12px 30px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    cursor: default;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.colab-tag:hover {
+    background: #214385;
+    color: white;
+    border-color: #214385;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(193, 18, 31, 0.2);
+}
+
+.colaboraciones-grid.revelado .colab-tag {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== RESPONSIVE (mobile) ===== */
+@media (max-width: 860px) {
+
+    .hero-bio {
+        height: 60vh;
+    }
+
+    .overlay-bio h1 {
+        font-size: 44px;
+    }
+
+    .contenido-bio {
+        padding: 60px 24px 80px;
+        margin-bottom: 0; /* ya no hace falta reservar espacio para el footer fijo */
+        margin-top: -60px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+    }
+
+    .perfil-card {
+        padding: 40px 25px;
+    }
+
+    .perfil-card h2 {
+        font-size: 30px;
+    }
+
+    .perfil-card p {
+        font-size: 18px;
+    }
+
+    /* Timeline: la línea central ya no tiene sentido en una columna angosta */
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 35px !important;
+        padding-right: 0 !important;
+    }
+
+    .timeline::before {
+        left: 10px;
+        transform: none;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 2px;
+        right: auto;
+    }
+
+    /* Hitos y escenarios: de fila superpuesta a columna simple */
+    .trayectoria-item,
+    .trayectoria-item.alt {
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+
+    .trayectoria-item.alt {
+        flex-direction: column;
+    }
+
+    .tray-img,
+    .trayectoria-item.alt .tray-img {
+        width: 100%;
+        box-shadow: none;
+        order: 1;
+    }
+
+    .tray-info,
+    .trayectoria-item.alt .tray-info {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left !important;
+        padding: 30px 25px;
+        order: 2;
+    }
+
+    .tray-info h3 {
+        font-size: 24px;
+    }
+
+    .colab-tag {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,263 @@
+/* ===================================================
+   SHOWS.CSS — Estilos exclusivos de shows.html
+=================================================== */
+
+/* ===== Encabezado (patrón "premium") ===== */
+
+.proyectos-header-premium {
+    text-align: center;
+    padding: 120px 20px 70px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+}
+
+.header-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #214385;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 300;
+    color: #111;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.header-title span {
+    font-style: italic;
+    color: #214385;
+    font-weight: 400;
+}
+
+.header-divider {
+    width: 50px;
+    height: 3px;
+    background: #214385;
+    margin: 35px auto;
+}
+
+/* ===== Estado de revelado on-scroll ===== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Agenda de shows ===== */
+
+.agenda-container {
+    max-width: 900px;
+    margin: 50px auto 100px;
+    padding: 0 20px;
+}
+
+.show-item {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.show-item:hover {
+    padding-left: 20px;
+    background-color: rgba(33, 67, 133, 0.02);
+}
+
+.show-fecha {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 80px;
+    border-right: 2px solid #214385;
+    margin-right: 40px;
+}
+
+.show-fecha .dia {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: #111;
+}
+
+.show-fecha .mes {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #214385;
+    text-transform: uppercase;
+}
+
+.show-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 5px 0;
+    color: #111;
+}
+
+.show-info p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #666;
+    margin: 0;
+}
+
+.show-link {
+    margin-left: auto;
+}
+
+.btn-ticket {
+    padding: 10px 25px;
+    border: 1px solid #214385;
+    text-decoration: none;
+    color: #214385;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    font-weight: 600;
+}
+
+.btn-ticket:hover {
+    background: #214385;
+    color: #fff;
+}
+
+/* ===== Giras destacadas ===== */
+
+.giras-destacadas {
+    background: #f8f9fa;
+    color: #333;
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.giras-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.gira-card {
+    background: white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.gira-card h4 {
+    color: #214385;
+    font-size: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 15px;
+}
+
+.gira-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ===== Cita final ===== */
+
+.cita-final {
+    background-color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.cita-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.comilla-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 90px;
+    color: #214385;
+    line-height: 0;
+    display: block;
+    margin-bottom: 40px;
+    opacity: 0.25;
+}
+
+.texto-cita {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-style: italic;
+    font-weight: 400;
+    color: #111;
+    line-height: 1.4;
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+/* ===================================================
+   RESPONSIVE (mobile) — SIEMPRE AL FINAL DEL ARCHIVO
+=================================================== */
+@media (max-width: 860px) {
+
+    .proyectos-header-premium {
+        padding: 90px 20px 50px;
+    }
+
+    .show-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .show-fecha {
+        border-right: none;
+        border-bottom: 2px solid #214385;
+        margin-right: 0;
+        padding-bottom: 10px;
+    }
+
+    .show-link {
+        margin-left: 0;
+    }
+
+    .giras-destacadas {
+        padding: 60px 20px;
+    }
+
+    .giras-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gira-card {
+        padding: 28px;
+    }
+
+    .cita-final {
+        padding: 70px 20px;
+    }
+
+    .comilla-serif {
+        font-size: 60px;
+        margin-bottom: 25px;
+    }
+}

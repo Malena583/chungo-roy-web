@@ -1,0 +1,178 @@
+/* ===================================================
+   NOTAS.CSS — Estilos exclusivos de notas.html
+=================================================== */
+
+.contenido-notas {
+    padding: 160px 12% 100px;
+    background: linear-gradient(to bottom, #ffffff, #fdfbf9);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 400px;
+}
+
+.notas-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.header-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #214385;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.header-divider {
+    width: 50px;
+    height: 3px;
+    background: #214385;
+    margin: 35px auto;
+}
+
+.titulo-notas {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: tituloFade 1.2s ease forwards;
+}
+
+.titulo-notas span {
+    color: #214385;
+}
+
+@keyframes tituloFade {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nota {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texto-nota {
+    width: 52%;
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 1.2s ease;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.capitular {
+    float: left;
+    font-size: 85px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 12px;
+    color: #214385;
+    font-weight: 600;
+}
+
+.cita {
+    font-style: italic;
+    color: #555;
+    margin: 30px 0;
+}
+
+.cita-grande {
+    font-size: 28px;
+    margin-top: 40px;
+    font-style: italic;
+    color: #1a1a1a;
+    border-left: 3px solid #214385;
+    padding-left: 20px;
+}
+
+.nota-img-wrapper {
+    width: 48%;
+    position: relative;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 1.2s ease;
+}
+
+.nota-img-wrapper img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    z-index: 2;
+    animation: zoomSuave 6s ease-in-out infinite alternate;
+}
+
+.decoracion-frame {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 12px solid #214385;
+    z-index: 1;
+}
+
+@keyframes zoomSuave {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+}
+
+.nota.visible .nota-img-wrapper,
+.nota.visible .texto-nota {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== RESPONSIVE (mobile) ===== */
+@media (max-width: 860px) {
+
+    .contenido-notas {
+        padding: 100px 24px 60px;
+        margin-bottom: 0; /* ya no hace falta reservar espacio para el footer fijo */
+    }
+
+    .titulo-notas {
+        font-size: 36px;
+    }
+
+    /* La nota pasa de fila (texto | imagen) a columna */
+    .nota {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .texto-nota,
+    .nota-img-wrapper {
+        width: 100%;
+        transform: translateY(40px); /* en mobile entra desde abajo, no desde el costado */
+    }
+
+    .nota.visible .nota-img-wrapper,
+    .nota.visible .texto-nota {
+        transform: translateY(0);
+    }
+
+    .nota-img-wrapper {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .capitular {
+        font-size: 60px;
+        line-height: 44px;
+    }
+
+    .cita-grande {
+        font-size: 22px;
+    }
+}

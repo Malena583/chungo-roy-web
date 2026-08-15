@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chungo Roy - Pianista</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <header id="site-header"></header>
+
+        <section class="hero">
+            <div class="hero-overlay">
+                <h1 class="hero-title">CHUNGO ROY</h1>
+                <p class="subtitulo">PIANISTA</p>
+            </div>
+        </section>
+
+        <section class="plataformas">
+            <h2>El Chungo Roy en</h2>
+
+            <div class="plataformas-logos">
+                <a href="https://open.spotify.com/playlist/2OCQnKmQpFRT2Ff9qnFyWs?si=woIp__VkTAuPn74NKSieSQ&pi=--3U6XzLT5ucb" target="_blank">
+                    <img src="img/logos/spotify.png" alt="Spotify">
+                </a>
+
+                <a href="https://www.instagram.com/chungoroymusico?igsh=a2cyb2hiYXdscjZw" target="_blank">
+                    <img src="img/logos/instagram.png" alt="Instagram">
+                </a>
+
+                <a href="https://www.youtube.com/feed/you" target="_blank">
+                    <img src="img/logos/youtube.png" alt="YouTube">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = document.querySelectorAll(".plataformas-logos img");
+            const plataformaSection = document.querySelector(".plataformas");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        icons.forEach((icon, index) => {
+                            setTimeout(() => {
+                                icon.classList.add("visible");
+                            }, index * 150);
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (plataformaSection) {
+                observer.observe(plataformaSection);
+            }
+        });
+    </script>
+
+</body>
+</html>

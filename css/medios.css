@@ -1,0 +1,235 @@
+/* ===================================================
+   MEDIOS.CSS — Estilos exclusivos de medios.html
+=================================================== */
+
+/* ===== Encabezado (patrón "premium") ===== */
+
+.proyectos-header-premium {
+    text-align: center;
+    padding: 120px 20px 70px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+}
+
+.header-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #214385;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 300;
+    color: #111;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.header-title span {
+    font-style: italic;
+    color: #214385;
+    font-weight: 400;
+}
+
+.header-divider {
+    width: 50px;
+    height: 3px;
+    background: #214385;
+    margin: 35px auto;
+}
+
+.seccion-medios .header-title {
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -1px;
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+    display: inline-block;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* ===== Estado de revelado on-scroll ===== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Sección Medios ===== */
+
+.seccion-medios {
+    background-color: #f8f5f2;
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+    padding-bottom: 100px;
+}
+
+.prensa-grid {
+    columns: 3;
+    column-gap: 30px;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.prensa-item {
+    break-inside: avoid;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background: #fff;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    padding: 12px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.08);
+    transform: rotate(calc(var(--r, 0) * 1deg));
+}
+
+.prensa-item:nth-child(odd) { --r: 1; }
+.prensa-item:nth-child(even) { --r: -1; }
+
+.prensa-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(20%) contrast(110%);
+    transition: all 0.5s ease;
+}
+
+.prensa-item::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 100px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    z-index: 5;
+}
+
+.prensa-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.prensa-overlay span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.prensa-item:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 10px 20px 40px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.prensa-item:hover img {
+    filter: sepia(0%) contrast(100%);
+    transform: scale(1.05);
+}
+
+.prensa-item:hover .prensa-overlay {
+    opacity: 1;
+}
+
+/* ===== Cita separador ===== */
+
+.cita-separador {
+    background-color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.cita-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.comillas-giant {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: #214385;
+    line-height: 0;
+    display: block;
+    margin-bottom: 40px;
+    opacity: 0.3;
+}
+
+.cita-separador p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-style: italic;
+    line-height: 1.4;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.cita-separador cite {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #214385;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* ===================================================
+   RESPONSIVE (mobile) — SIEMPRE AL FINAL DEL ARCHIVO
+=================================================== */
+@media (max-width: 900px) {
+    .prensa-grid { columns: 2; }
+}
+
+@media (max-width: 600px) {
+    .prensa-grid { columns: 1; }
+}
+
+@media (max-width: 860px) {
+
+    .proyectos-header-premium {
+        padding: 90px 20px 50px;
+    }
+
+    .prensa-grid {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .cita-separador {
+        padding: 70px 20px;
+    }
+
+    .comillas-giant {
+        font-size: 80px;
+        margin-bottom: 25px;
+    }
+}

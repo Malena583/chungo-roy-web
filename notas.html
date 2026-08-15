@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas - Chungo Roy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/notas.css">
+</head>
+
+<body class="pagina-interna">
+
+    <header id="site-header"></header>
+
+    <main>
+        <section class="contenido-notas">
+
+            <div class="notas-header">
+                <span class="header-tag">Reflexiones Musicales</span>
+                <h2 class="titulo-notas">Notas de <span>Interés</span></h2>
+                <div class="header-divider"></div>
+            </div>
+
+            <article class="nota">
+                <div class="texto-nota">
+                    <p class="parrafo-principal">
+                        <span class="capitular">L</span>a música de Chungo Roy no es solo una sucesión de notas, es un lenguaje que respira entre el chamamé, el jazz y la academia. Cada composición busca desdibujar las fronteras entre lo popular y lo docto.
+                    </p>
+
+                    <p class="cita">
+                        A través de sus arreglos, Roy logra que un instrumento universal como el piano hable con acento litoraleño, manteniendo siempre una elegancia que ha sido elogiada en escenarios internacionales.
+                    </p>
+
+                    <p class="cita-grande">
+                        "El piano es, para mí, una extensión del paisaje misionero: profundo, vibrante y lleno de naturalidad."
+                    </p>
+                </div>
+
+                <div class="nota-img-wrapper">
+                    <div class="decoracion-frame"></div>
+                    <img src="img/fotos/TocandoPiano3.jpeg" alt="Chungo Roy al piano">
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="footer-art">
+        <div id="site-footer"></div>
+    </footer>
+
+    <script src="js/components.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nota = document.querySelector(".nota");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        nota.classList.add("visible");
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            if (nota) {
+                observer.observe(nota);
+            }
+        });
+    </script>
+
+</body>
+</html>

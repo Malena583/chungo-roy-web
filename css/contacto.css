@@ -1,0 +1,162 @@
+/* ===================================================
+   CONTACTO.CSS — Estilos exclusivos de contacto.html
+=================================================== */
+
+.contacto-premium {
+    padding: 150px 20px 100px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contacto-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== Estado de revelado on-scroll ===== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Encabezado ===== */
+
+.contacto-header {
+    margin-bottom: 60px;
+}
+
+.header-tag {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #214385;
+    margin-bottom: 15px;
+}
+
+.header-divider {
+    width: 50px;
+    height: 3px;
+    background: #214385;
+    margin: 35px auto;
+}
+
+/* ===== Tarjeta Central ===== */
+
+.contacto-central {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.contacto-card {
+    width: 100%;
+    max-width: 550px;
+    padding: 70px 40px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.contacto-card:hover {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    border-color: #214385;
+    transform: translateY(-5px);
+}
+
+.card-icon img {
+    width: 40px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.contacto-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.contacto-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.link-contacto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: #214385;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(33, 67, 133, 0.3);
+    transition: 0.3s;
+}
+
+.link-contacto:hover {
+    border-bottom: 1px solid #214385;
+    opacity: 0.8;
+}
+
+/* ===== Bloque Disponibilidad ===== */
+
+.disponibilidad-block {
+    border-top: 1px solid #eee;
+    padding-top: 60px;
+}
+
+.disponibilidad-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.disp-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #214385;
+    margin-bottom: 10px;
+}
+
+.disp-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: #111;
+    line-height: 1.2;
+}
+
+/* ===================================================
+   RESPONSIVE (mobile) — SIEMPRE AL FINAL DEL ARCHIVO
+=================================================== */
+@media (max-width: 860px) {
+
+    .contacto-premium {
+        padding: 100px 20px 60px;
+    }
+
+    .contacto-card {
+        padding: 50px 20px;
+    }
+
+    .link-contacto {
+        font-size: 20px;
+    }
+
+    .disponibilidad-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

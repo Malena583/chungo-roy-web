@@ -1,0 +1,314 @@
+/* ===================================================
+   PROYECTOS.CSS — Estilos exclusivos de proyectos.html
+=================================================== */
+
+/* ===== Encabezado (patrón compartido con notas.html) ===== */
+
+.notas-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.header-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #214385;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.titulo-notas {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: tituloFade 1.2s ease forwards;
+}
+
+.titulo-notas span {
+    color: #214385;
+}
+
+@keyframes tituloFade {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header-divider {
+    width: 50px;
+    height: 3px;
+    background: #214385;
+    margin: 35px auto;
+}
+
+/* ===== Sección Hitos ===== */
+
+.hitos-seccion {
+    padding: 100px 8%;
+    background-color: #fdfbf9;
+    margin-top: 50px;
+}
+
+.grid-hitos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.hito-card {
+    background: white;
+    padding: 40px;
+    border: 1px solid #eee;
+    border-top: 4px solid #214385;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.hito-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(33, 67, 133, 0.05);
+}
+
+.hito-categoria {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #214385;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hito-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.hito-lista li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 8px;
+}
+
+.hito-lista li strong {
+    color: #214385;
+}
+
+/* ===== Sección Habilidades ===== */
+
+.habilidades-tecnicas {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.habilidades-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.habilidades-texto p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #444;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.skills-list li {
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: justify;
+    line-height: 1.6;
+    color: #333;
+}
+
+.skills-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #214385;
+    font-weight: bold;
+}
+
+.skill-mini-card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-left: 4px solid #111;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.skill-mini-card.highlight {
+    border-left-color: #214385;
+    background: #111;
+    color: white;
+}
+
+.skill-mini-card h4 {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #214385;
+}
+
+.skill-mini-card.highlight h4 {
+    color: #214385;
+}
+
+/* ===== Sección Media (Producciones & Colaboraciones) ===== */
+
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.media-card {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-local-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-player {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    background-color: #000;
+    outline: none;
+}
+
+.video-player:hover {
+    box-shadow: 0 15px 50px rgba(193, 18, 31, 0.3);
+    transition: 0.4s;
+}
+
+.youtube-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-yt-premium {
+    position: relative;
+    padding: 15px 40px;
+    background-color: #214385;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #214385;
+}
+
+.btn-yt-premium:hover {
+    background-color: transparent;
+    color: #214385 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(193, 18, 31, 0.2);
+}
+
+.btn-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-yt-premium span::after {
+    content: ' →';
+    opacity: 0;
+    margin-left: -10px;
+    transition: all 0.3s ease;
+}
+
+.btn-yt-premium:hover span::after {
+    opacity: 1;
+    margin-left: 10px;
+}
+
+/* ===================================================
+   RESPONSIVE (mobile) — SIEMPRE AL FINAL DEL ARCHIVO
+=================================================== */
+@media (max-width: 860px) {
+
+    .titulo-notas {
+        font-size: 36px;
+    }
+
+    .hitos-seccion {
+        padding: 60px 20px;
+        margin-top: 0;
+    }
+
+    .hito-card {
+        padding: 28px;
+    }
+
+    .habilidades-tecnicas {
+        padding: 50px 20px;
+    }
+
+    .habilidades-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .video-local-wrapper {
+        max-width: 100%;
+    }
+
+    .btn-yt-premium {
+        padding: 14px 28px;
+        font-size: 10px;
+    }
+}
