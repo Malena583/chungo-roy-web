@@ -1,0 +1,101 @@
+/* ===================================================
+   PRIVACIDAD.CSS — Estilos exclusivos de privacidad.html
+=================================================== */
+
+.legal-contenido {
+    padding: 160px 20px 100px;
+    background: #ffffff;
+}
+
+.legal-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.header-tag {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #214385;
+    margin-bottom: 15px;
+}
+
+.legal-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: #111;
+}
+
+.header-divider {
+    width: 50px;
+    height: 3px;
+    background: #214385;
+    margin: 30px auto;
+}
+
+.legal-actualizado {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.legal-texto h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #214385;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.legal-texto p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.legal-texto a {
+    color: #214385;
+    text-decoration: underline;
+}
+
+.legal-texto a:hover {
+    opacity: 0.8;
+}
+
+/* ===================================================
+   RESPONSIVE (mobile) — SIEMPRE AL FINAL DEL ARCHIVO
+=================================================== */
+@media (max-width: 860px) {
+
+    .legal-contenido {
+        padding: 100px 20px 60px;
+    }
+
+    .legal-header h1 {
+        font-size: 34px;
+    }
+
+    .legal-texto h2 {
+        font-size: 22px;
+        margin-top: 40px;
+    }
+
+    .legal-texto p {
+        font-size: 14px;
+    }
+}

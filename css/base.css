@@ -428,3 +428,36 @@ nav a.activo::after {
         font-size: 26px;
     }
 }
+
+/* ===== Firma del footer (solo aparece en el footer de index.html) ===== */
+
+.footer-credits {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.footer-credits p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 5px;
+}
+
+.signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+}
+
+.signature:hover {
+    color: #ffffff;
+    border-bottom: 1px solid #214385;
+    transform: translateY(-2px);
+}

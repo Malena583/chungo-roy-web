@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="footer-credits">
                 <p>Diseño & Desarrollo</p>
                 <a href="mailto:maleb3609@gmail.com" class="signature">Malena Bernal</a>
-            </div>
             <div class="footer-copy">
                 <p>© 2026 Chungo Roy - Pianista</p>
+                <p><a href="privacidad.html" style="color: rgba(255,255,255,0.4); font-size: 11px; text-decoration: underline;">Política de Privacidad</a></p>
             </div>
         </div>
     `;
