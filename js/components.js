@@ -75,9 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="https://open.spotify.com/playlist/2OCQnKmQpFRT2Ff9qnFyWs?si=woIp__VkTAuPn74NKSieSQ&pi=--3U6XzLT5ucb" target="_blank" rel="noopener noreferrer">
                     <img src="img/logos/spotify.png" alt="Spotify">
                 </a>
-                <a href="https://www.youtube.com/c/ChangoSpasiukoficial" target="_blank" rel="noopener noreferrer">
-                    <img src="img/logos/youtube.png" alt="YouTube">
-                </a>
+                
             </div>
             <div class="footer-copy">
                 <p>© 2026 Chungo Roy - Pianista</p>
